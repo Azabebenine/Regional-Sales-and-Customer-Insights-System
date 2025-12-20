@@ -1,4 +1,4 @@
-
+![](https://github.com/Azabebenine/Regional-Sales-and-Customer-Insights-System/blob/c7092310b1b02a93491bc1d7c87280f8e6a5dc1d/BPMN%20PIC.png)
 
 Business Process Scenario Description
 
