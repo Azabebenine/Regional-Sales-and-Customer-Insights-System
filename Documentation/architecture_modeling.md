@@ -236,6 +236,6 @@ Constraints for data validation
 
 SQL analytics and audit queries
 
-🧾 Conclusion
+ Conclusion
 
 The Regional Sales and Customer Insights System for LENOVO transforms sales and payment data into a structured, automated Management Information System.
