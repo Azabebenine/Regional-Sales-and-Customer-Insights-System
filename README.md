@@ -1,7 +1,7 @@
 #  PLSQL Capstone Project: Regional Sales & Customer Management System
 
 **Course:** Advanced PL/SQL  
-**Student Name:** Benine  
+**Student Name:** AZABE Benine  
 **Student ID:** 28291  
 **Group:** Tuesday  
 **Database:** Oracle (Pluggable Database – PDB)
