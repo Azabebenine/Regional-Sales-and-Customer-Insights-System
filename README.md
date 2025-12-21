@@ -97,7 +97,7 @@ Stores customer information and links customers to regions.
 - View all customers:  
 ```sql
 SELECT * FROM CUSTOMERS;
-
+```
 ## Assumptions
 
 Oracle 21c or higher is used
