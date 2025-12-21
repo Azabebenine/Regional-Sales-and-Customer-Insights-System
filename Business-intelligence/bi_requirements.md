@@ -1,6 +1,7 @@
 Business Intelligence Requirements
 
 Regional Sales & Customer Insights System (LENOVO)
+
 Author: AZABE Benine
 
 1. KPIs That Matter
