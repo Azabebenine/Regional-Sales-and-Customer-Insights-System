@@ -1,17 +1,127 @@
-![](https://github.com/Azabebenine/Regional-Sales-and-Customer-Insights-System/blob/c7092310b1b02a93491bc1d7c87280f8e6a5dc1d/BPMN%20PIC.png)
+#  PLSQL Capstone Project: Regional Sales & Customer Management System
 
-Business Process Scenario Description
+**Course:** Advanced PL/SQL  
+**Student Name:** Benine  
+**Student ID:** 28291  
+**Group:** Tuesday  
+**Database:** Oracle (Pluggable Database – PDB)
 
-The business process begins when a customer, such as a retailer operating in the Kigali region, visits a LENOVO outlet to purchase laptops or computer accessories. The customer specifies the product type and quantity required, which triggers the start of the sales process. This initial interaction represents the customer swimlane in the BPMN diagram and marks the formal initiation of the transaction.
+---
 
-Once the order is placed, the Sales Department receives the customer’s request. A sales clerk records the order details into the system, including customer information, selected product, region, and quantity sold. This step ensures that all sales transactions are captured in a standardized and structured manner before being processed by the Management Information System.
+##  Project Overview
 
-The MIS, implemented using a PL/SQL-based system, validates the customer and product data against the existing database. The system retrieves the unit price of the selected product and automatically calculates the total sales amount based on the quantity sold. After validation and calculation, the transaction is stored in the SALES table, ensuring data accuracy and centralized record keeping.
+This project implements a **Regional Sales and Customer Management System** using Oracle SQL and PL/SQL.  
+The system is designed to store, manage, and analyze customer and regional data to support **Business Intelligence (BI) reporting** and decision-making.
 
-Following the sales entry, the customer proceeds to make a payment using an available method such as cash, card, mobile banking, or online transfer. The Finance Department receives the payment and records the payment details, including the payment method and amount paid. This information is then sent to the MIS for further processing and storage in the PAYMENTS table.
+The database follows **relational and BI best practices**, including:
 
-At this stage, the MIS system evaluates whether the payment made is complete. If the full amount has been paid, the system updates the payment status to “Paid.” If only part of the amount has been settled, the payment status is marked as “Partial” or “Pending.” This decision point is critical for financial control and ensures accurate tracking of outstanding balances.
+- Proper primary and foreign key relationships
+- Clear separation of master (dimension) data
+- Readiness for future fact tables and analytics
 
-After processing sales and payment data, the MIS generates analytical reports that summarize regional sales performance, top-selling products, high-value customers, and payment statuses. These reports transform operational data into meaningful information for management use. The reports are then made available to management for review.
+---
 
-Finally, LENOVO management analyzes the generated reports to support strategic decision-making. Based on the insights provided, management can adjust inventory levels, design targeted marketing campaigns, follow up on pending payments, and plan future regional sales strategies. This marks the end of the business process, demonstrating how the MIS supports operational efficiency and informed managerial decisions.
+##  Objectives
+
+- Design and implement a relational database using Oracle
+- Enforce data integrity using primary and foreign keys
+- Support BI analysis by organizing data by region and customer category
+- Prepare the system for future extensions (sales, products, reporting)
+
+---
+
+##  Database Architecture
+
+The database is created inside an Oracle Pluggable Database (PDB) following the naming convention:
+
+
+The schema contains **core dimension tables** used in analytical systems.
+
+---
+
+##  Tables Implemented
+
+### REGION Table
+
+Stores geographical regions.  
+
+**Columns:**  
+- `region_id` – Unique region ID (Primary Key)  
+- `region_name` – Region name (Kigali, Southern, Eastern, etc.)
+
+---
+
+### CUSTOMERS Table
+
+Stores customer information and links customers to regions.  
+
+**Columns:**  
+- `customer_id` – Unique customer ID (Primary Key)  
+- `customer_name` – Full customer name  
+- `region_id` – References `REGION(region_id)`  
+- `contact_number` – Phone number  
+- `category` – Individual, Retailer, Wholesaler, Corporate
+
+---
+
+##  Relationships
+
+- One `REGION` → Many `CUSTOMERS`  
+- Enforced using a **foreign key constraint**  
+- Prevents customers from being assigned to non-existent regions
+
+---
+
+##  Business Intelligence Considerations
+
+- `REGION` and `CUSTOMERS` act as **dimension tables**  
+- Customer category supports **segmentation analysis**  
+- Region-based analysis enables:
+  - Sales by region (future extension)
+  - Customer distribution reporting  
+- Design supports **future fact tables** such as `SALES` or `ORDERS`
+
+---
+
+##  Data Integrity & Constraints
+
+- Primary keys ensure **uniqueness**  
+- Foreign keys ensure **referential integrity**  
+- NOT NULL constraints enforce **required fields**  
+- Schema-based ownership ensures **security**
+
+---
+
+##  Sample Query Usage
+
+- View all customers:  
+```sql
+SELECT * FROM CUSTOMERS;
+
+## Assumptions
+
+Oracle 21c or higher is used
+
+User has privileges to create tables
+
+REGION table is created before CUSTOMERS
+
+This project is for academic purposes
+
+## Future Enhancements
+
+Add PRODUCTS table
+
+Add SALES fact table
+
+Implement PL/SQL procedures
+
+Add audit logging
+
+Create BI reports and dashboards
+
+## Conclusion
+
+This project demonstrates a solid understanding of Oracle SQL, relational design, and BI principles.
+It forms a strong foundation for enterprise-level analytics and future PL/SQL development.
+
