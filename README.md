@@ -69,7 +69,7 @@ Stores customer information and links customers to regions.
 - One `REGION` → Many `CUSTOMERS`  
 - Enforced using a **foreign key constraint**  
 - Prevents customers from being assigned to non-existent regions
-  ![ERD](screenshots/OEM.jpeg)
+ Rename ER_diagram.png to screenshots/ER_diagram.png
 ---
 
 ##  Business Intelligence Considerations
